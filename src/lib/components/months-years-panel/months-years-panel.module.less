@@ -1,0 +1,31 @@
+@import "../../colors.module.less";
+@import "../../mixins.module.less";
+
+.monthsYearsContainer {
+	.captionRegular;
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(3, 68px);
+	grid-gap: 8px;
+}
+
+.monthsYearsCell {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 68px;
+	height: 40px;
+	background-color: @White;
+	border-radius: 4px;
+	cursor: pointer;
+	&.today {
+		color: @Blue;
+	}
+	&.selected {
+		background-color: @BlueLight;
+	}
+	&.disabled {
+		color: @Gray30;
+		cursor: default;
+	}
+}

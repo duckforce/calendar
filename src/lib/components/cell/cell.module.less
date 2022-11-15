@@ -1,0 +1,37 @@
+@import "../../colors.module.less";
+@import "../../mixins.module.less";
+
+.cell {
+	.captionRegular;
+	background-color: @White;
+	width: 24px;
+	height: 20px;
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	text-align: center;
+
+	&.inrange {
+		background-color: @BlueLight;
+		color: inherit;
+	}
+
+	&.holiday {
+		color: @Red;
+	}
+
+	&.today {
+		color: @Blue;
+	}
+
+	&.disabled {
+		color: @Gray30;
+		cursor: default;
+	}
+
+	&.selected {
+		background-color: @Blue;
+		color: @White;
+		border-radius: 2px;
+	}
+}

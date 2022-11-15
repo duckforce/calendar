@@ -1,0 +1,38 @@
+@import "../../colors.module.less";
+
+.wrapper {
+	display: flex;
+}
+
+.calendar {
+	padding: 16px 18px 12px 18px;
+	width: 216px;
+	user-select: none;
+	box-sizing: content-box;
+	background-color: @White;
+}
+
+.label {
+	text-align: center;
+	display: grid;
+	grid-template-columns: repeat(7, 24px);
+	grid-gap: 8px;
+}
+
+.daylabels {
+	.label;
+	margin-bottom: 12px;
+}
+
+.days {
+	.label;
+	grid-gap: 8px;
+}
+
+.headerLabel {
+	cursor: pointer;
+	color: @Blue;
+	&:hover {
+		color: @Blue;
+	}
+}

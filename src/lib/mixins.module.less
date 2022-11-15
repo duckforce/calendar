@@ -1,0 +1,313 @@
+@import "./fonts.module.less";
+@import "./colors.module.less";
+// Fonts
+
+.h0 {
+	font-family: @InterExtraBoldFont;
+	font-size: 64px;
+	line-height: 72px;
+}
+
+.h1 {
+	font-family: @InterBoldFont;
+	font-size: 32px;
+	line-height: 42px;
+}
+
+.h2 {
+	font-family: @InterBoldFont;
+	font-size: 24px;
+	line-height: 34px;
+}
+
+.h3 {
+	font-family: @InterBoldFont;
+	font-size: 20px;
+	line-height: 28px;
+}
+
+.bigTextRegular {
+	font-family: @InterRegularFont;
+	font-size: 20px;
+	line-height: 28px;
+}
+
+.bodyTextRegular {
+	font-family: @InterRegularFont;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.bodyTextBold {
+	font-family: @InterBoldFont;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.subtextRegular {
+	font-family: @InterRegularFont;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.subtextBold {
+	font-family: @InterBoldFont;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.subtitleBold {
+	font-family: @InterBoldFont;
+	font-size: 14px;
+	line-height: 20px;
+	text-transform: uppercase;
+}
+
+.captionRegular {
+	font-family: @InterRegularFont;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.captionBoldV2 {
+	font-family: @InterBoldFont;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.captionBold {
+	font-family: @InterExtraBoldFont;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.upCaptionBold {
+	font-family: @InterExtraBoldFont;
+	font-size: 12px;
+	line-height: 16px;
+	text-transform: uppercase;
+}
+
+// Button icon fillColor
+.buttonIconFillColor(@fillColor) {
+	.Button-link__icon-container-icon > svg > path {
+		fill: @fillColor;
+	}
+}
+
+// TODO: delete
+// SimpleInput
+.inputStyle(@paddingHorizontal) {
+	.captionRegular;
+	width: inherit;
+	box-sizing: border-box;
+	border-radius: 4px;
+	border: 2px solid @Gray15;
+	outline: none;
+	padding: 0 @paddingHorizontal;
+	transition: border-color 0.3s ease-in-out, background 0.3s ease-in-out;
+	caret-color: @Blue;
+
+	&::placeholder {
+		color: @Gray30;
+	}
+}
+
+.header {
+	height: 64px;
+	padding: 0 24px;
+	box-shadow: 0 4px 16px rgba(0, 26, 52, 0.16);
+	display: flex;
+	justify-content: space-between;
+	background: @White;
+
+	&__leftContainer,
+	&__rightContainer {
+		display: flex;
+		align-items: center;
+	}
+}
+
+// PaginationLimitSelector Button
+
+.paginationLimitSelectorButton {
+	display: flex;
+	align-items: center;
+	padding: 0 12px;
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+	border: none;
+	background: none;
+	box-sizing: border-box;
+
+	&_item {
+		height: 32px;
+	}
+
+	&:not(&_selected) {
+		&:hover {
+			background: @Gray15;
+		}
+	}
+}
+
+.defaultCellStyles {
+	// отступ нужен для синхронизации с отступами в хэдере
+	padding: 2px 8px;
+	display: flex;
+	align-items: center;
+}
+
+.defaultRowStyles {
+	align-items: center;
+	border-bottom: 1px solid @Gray7;
+}
+
+//All colors
+
+.allColorsSet(@prop) {
+	&--blue {
+		@{prop}: @Blue;
+	}
+	&--black {
+		@{prop}: @Black;
+	}
+
+	&--white {
+		@{prop}: @White;
+	}
+
+	&--gray {
+		@{prop}: @Gray;
+	}
+
+	&--green {
+		@{prop}: @Green;
+	}
+
+	&--red {
+		@{prop}: @Red;
+	}
+
+	&--gray2 {
+		@{prop}: @Gray2;
+	}
+
+	&--gray5 {
+		@{prop}: @Gray5;
+	}
+
+	&--gray7 {
+		@{prop}: @Gray7;
+	}
+
+	&--gray15 {
+		@{prop}: @Gray15;
+	}
+
+	&--gray30 {
+		@{prop}: @Gray30;
+	}
+
+	&--gray50 {
+		@{prop}: @Gray50;
+	}
+
+	&--gray70 {
+		@{prop}: @Gray70;
+	}
+
+	&--gray80 {
+		@{prop}: @Gray80;
+	}
+
+	&--blueSnow {
+		@{prop}: @BlueSnow;
+	}
+
+	&--blueLight {
+		@{prop}: @BlueLight;
+	}
+
+	&--blueMedium {
+		@{prop}: @BlueMedium;
+	}
+
+	&--blueDark {
+		@{prop}: @BlueDark;
+	}
+
+	&--purple {
+		@{prop}: @Purple;
+	}
+
+	&--greenDark {
+		@{prop}: @GreenDark;
+	}
+
+	&--redDark {
+		@{prop}: @RedDark;
+	}
+
+	&--redPale {
+		@{prop}: @RedPale;
+	}
+
+	&--pink {
+		@{prop}: @Pink;
+	}
+
+	&--aqua {
+		@{prop}: @Aqua;
+	}
+
+	&--sky {
+		@{prop}: @Sky;
+	}
+
+	&--greenBrand {
+		@{prop}: @GreenBrand;
+	}
+
+	&--orange {
+		@{prop}: @Orange;
+	}
+
+	&--yellowMustard {
+		@{prop}: @YellowMustard;
+	}
+
+	&--tealStone {
+		@{prop}: @TealStone;
+	}
+
+	&--indigo {
+		@{prop}: @Indigo;
+	}
+
+	&--grayRain {
+		@{prop}: @GrayRain;
+	}
+
+	&--wetAsphalt {
+		@{prop}: @WetAsphalt;
+	}
+}
+
+.resetButtonStyles {
+	border: none;
+	padding: 0;
+	outline: none;
+	background: none;
+}
+
+.setCellHeight(@prop) {
+	&--S {
+		@{prop}: 36px;
+	}
+
+	&--M {
+		@{prop}: 60px;
+	}
+}
