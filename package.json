@@ -1,9 +1,22 @@
 {
-  "name": "calendar",
+  "name": "@duckforce/calendar",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "files": ["dist"],
+  "description": "calendar with filters",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duckforce/calendar.git"
+  },
+  "author": "duckforce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duckforce/calendar/issues"
+  },
+  "homepage": "https://github.com/duckforce/calendar#readme",
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
   "scripts": {
