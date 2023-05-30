@@ -11,7 +11,7 @@ import {
   isSameDate,
 } from '../../helpers';
 import { useMonthDays } from '../../hooks';
-import { months, weekdays } from '../../locale';
+import { months, WEEKDAYS } from '../../locale';
 import Cell from '../cell';
 import DayLabel from '../day-label';
 import { MonthsPanel, YearsPanel } from '../months-years-panel';
@@ -133,7 +133,7 @@ const Calendar = ({
       {!showMonthsPanel && !showYearsPanel && (
         <Fragment>
           <div className={cn(s.daylabels)}>
-            {weekdays.map(([short, full], index) => (
+            {WEEKDAYS.map(([short, full], index) => (
               <DayLabel key={short + index} title={full}>
                 {short}
               </DayLabel>

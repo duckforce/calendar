@@ -1,24 +1,35 @@
-export const weekdays = [
-  ['Пн', 'Понедельник'],
-  ['Вт', 'Вторник'],
-  ['Ср', 'Среда'],
-  ['Чт', 'Четверг'],
-  ['Пт', 'Пятница'],
-  ['Сб', 'Суббота'],
-  ['Вс', 'Воскресенье'],
-];
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
-export const months = new Map([
-  [0, 'Январь'],
-  [1, 'Февраль'],
-  [2, 'Март'],
-  [3, 'Апрель'],
-  [4, 'Май'],
-  [5, 'Июнь'],
-  [6, 'Июль'],
-  [7, 'Август'],
-  [8, 'Сентябрь'],
-  [9, 'Октябрь'],
-  [10, 'Ноябрь'],
-  [11, 'Декабрь'],
-]);
+function monthsForLocale(localeName = 'en-US'): string[] {
+  const format = new Intl
+     .DateTimeFormat(localeName, { month: 'long' }).format;
+
+  return [...Array(12).keys()]
+    .map((m) => capitalizeFirstLetter(format(new Date(Date.UTC(2021, (m+1)%12)))));
+}
+
+function weekdayForLocale(localeName = 'en-US') {
+  const format = new Intl.DateTimeFormat(localeName, { weekday: 'long' }).format;
+  return [...Array(7).keys()]
+    .map((day) => capitalizeFirstLetter(format(new Date(Date.UTC(2021, 5, day)))));
+}
+
+function getLocale() {
+    return (navigator.languages && navigator.languages.length) ? navigator.languages[0] : navigator.language;
+}
+
+function fillWeekdays() {
+  const weekdaysLabels = weekdayForLocale(getLocale())
+  return weekdaysLabels.map(label => [label.slice(0, 2), label]);
+}
+
+export const WEEKDAYS = fillWeekdays();
+
+function fillMonths(): [number, string][] {
+  const monthsLabels = monthsForLocale(getLocale())
+  return monthsLabels.map((label, index) => [index, label]);
+}
+
+export const months = new Map<number, string>(fillMonths());
