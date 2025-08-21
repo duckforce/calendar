@@ -1,47 +1,14 @@
 {
-  "name": "@duckforce/calendar",
-  "version": "0.0.1",
-  "type": "module",
-  "description": "calendar with filters",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/duckforce/calendar.git"
-  },
-  "author": "duckforce",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/duckforce/calendar/issues"
-  },
-  "homepage": "https://github.com/duckforce/calendar#readme",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.umd.js",
-  "module": "./dist/index.es.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
-    "@types/node": "^18.11.3",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^2.1.0",
-    "classnames": "^2.3.2",
-    "less": "^4.1.3",
-    "typescript": "^4.6.4",
-    "vite": "^3.1.0"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.cjs.js",
-      "require": "./dist/index.umd.js"
-    }
-  },
-  "types": "./dist/types/index.d.ts"
+    "@vitest/coverage-v8": "^3.2.4",
+    "ts-node": "^10.9.2",
+    "vitest": "^3.2.4"
+  }
 }
