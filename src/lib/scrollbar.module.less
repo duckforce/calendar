@@ -1,0 +1,67 @@
+/* Safari 18 compatible scrollbar styles */
+:global(*) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+  box-sizing: border-box;
+}
+
+:global(*::-webkit-scrollbar) {
+  width: 12px;
+  height: 12px;
+  -webkit-appearance: none;
+}
+
+:global(*::-webkit-scrollbar-thumb) {
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  background-color: var(--color-unsorted-outline, rgba(255, 255, 255, 0.12));
+  background-clip: content-box;
+  border: var(--space-x1, 2px) solid transparent;
+  min-height: 20px;
+}
+
+:global(*::-webkit-scrollbar-track) {
+  border-radius: 100px;
+  margin: var(--space-x1, 2px);
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+:global(*::-webkit-scrollbar-corner) {
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+/* Safari 18 specific fixes */
+@supports (-webkit-appearance: none) and (scrollbar-width: thin) {
+  :global(*::-webkit-scrollbar) {
+    width: 12px;
+    height: 12px;
+    -webkit-appearance: none;
+  }
+  
+  :global(*::-webkit-scrollbar-thumb) {
+    background-color: var(--color-unsorted-outline, rgba(255, 255, 255, 0.12));
+    border: var(--space-x1, 2px) solid transparent;
+    background-clip: content-box;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+  }
+  
+  :global(*::-webkit-scrollbar-track) {
+    background: transparent;
+    border-radius: 100px;
+    margin: var(--space-x1, 2px);
+  }
+}
+
+/* Additional Safari 18 compatibility */
+:global(html) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}
+
+:global(body) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+}

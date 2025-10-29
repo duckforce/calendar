@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import Calendar from './lib';
+import './lib/scrollbar.module.less';
 
 
 const App = () => {
