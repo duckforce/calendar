@@ -6,6 +6,74 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React + TS</title>
+    <style>
+      /* Глобальные стили скроллбара с поддержкой Safari 18 */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.12) rgba(0, 0, 0, 0);
+        box-sizing: border-box;
+      }
+
+      /* WebKit стили для Safari */
+      *::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.12);
+        background-clip: padding-box;
+        border: 2px solid transparent;
+        -webkit-border-radius: 20px;
+      }
+
+      *::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      *::-webkit-scrollbar-thumb:active {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      *::-webkit-scrollbar-track {
+        border-radius: 100px;
+        margin: 2px;
+        background-color: rgba(0, 0, 0, 0);
+        -webkit-border-radius: 100px;
+      }
+
+      /* Поддержка для элементов с overflow */
+      *::-webkit-scrollbar-corner {
+        background-color: transparent;
+      }
+
+      /* Специальные стили для темных элементов */
+      .dark-scrollbar {
+        scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+      }
+
+      .dark-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+
+      .dark-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      /* Стили для светлых элементов */
+      .light-scrollbar {
+        scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+      }
+
+      .light-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .light-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>

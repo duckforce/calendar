@@ -1,0 +1,113 @@
+// Глобальные стили скроллбара с поддержкой Safari 18
+// Определяем переменные для цветов и размеров
+@scrollbar-width: 12px;
+@scrollbar-thumb-color: rgba(255, 255, 255, 0.12);
+@scrollbar-track-color: rgba(0, 0, 0, 0);
+@scrollbar-border-width: 2px;
+@scrollbar-border-radius: 20px;
+
+// Глобальные стили для всех элементов
+* {
+    // Стандартные CSS свойства (поддерживаются в Safari 18)
+    scrollbar-width: thin;
+    scrollbar-color: @scrollbar-thumb-color @scrollbar-track-color;
+    box-sizing: border-box;
+}
+
+// WebKit стили для совместимости с Safari
+*::-webkit-scrollbar {
+    width: @scrollbar-width;
+    height: @scrollbar-width;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: @scrollbar-border-radius;
+    background-color: @scrollbar-thumb-color;
+    background-clip: padding-box;
+    border: @scrollbar-border-width solid transparent;
+    
+    // Улучшенная поддержка для Safari 18
+    -webkit-border-radius: @scrollbar-border-radius;
+    
+    // Добавляем hover эффект
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    &:active {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 100px;
+    margin: @scrollbar-border-width;
+    background-color: @scrollbar-track-color;
+    
+    // Дополнительная поддержка для Safari
+    -webkit-border-radius: 100px;
+}
+
+// Специальные стили для элементов с темным фоном
+.dark-scrollbar {
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.3);
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        &:active {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    }
+}
+
+// Стили для светлых элементов
+.light-scrollbar {
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        &:active {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    }
+}
+
+// Скрытие скроллбара (если нужно)
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+// Тонкий скроллбар
+.thin-scrollbar {
+    scrollbar-width: thin;
+    
+    &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+// Толстый скроллбар
+.thick-scrollbar {
+    scrollbar-width: auto;
+    
+    &::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+    }
+}
