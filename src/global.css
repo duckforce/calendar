@@ -1,0 +1,39 @@
+/* Global box-sizing */
+:root,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* CSS Scrollbars spec (Firefox, Safari 18+) */
+:root {
+  --scrollbar-thumb: rgba(255, 255, 255, 0.12);
+  --scrollbar-track: transparent;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Legacy WebKit scrollbars (Chrome, older Safari). Safari 18 may ignore width/track in overlay mode */
+@supports selector(::-webkit-scrollbar) {
+  *::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    background-color: var(--scrollbar-thumb);
+    background-clip: padding-box;
+    border: 4px solid transparent; /* fixed px to avoid undefined CSS vars */
+  }
+
+  *::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: var(--scrollbar-track);
+    margin: 4px;
+  }
+}
